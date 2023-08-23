@@ -1,10 +1,13 @@
 import useData from "../hooks/useData";
 import useGenres, { Genre } from "../hooks/useGenres";
-import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { Center, HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
 import getCroppedImages from "../services/get-cropped-images";
 
 const Genres = () => {
-  const { data } = useGenres();
+  const { data , error ,isLoading} = useGenres();
+
+    if (error) return null ;
+    if (isLoading) return <Spinner marginX={'1%'} marginY={'4%'} /> ;
 
   return (
     <>
