@@ -4,10 +4,11 @@ import getCroppedImages from "../services/get-cropped-images";
 
 interface Props {
   onSelectgenre : (genre : Genre) => void;
+  selectedGenre : Genre | null;
 }
 
 
-const Genres = ({ onSelectgenre }: Props) => {
+const Genres = ({ selectedGenre ,onSelectgenre }: Props) => {
   const { data , error ,isLoading} = useGenres();
 
     if (error) return null ;
@@ -20,7 +21,7 @@ const Genres = ({ onSelectgenre }: Props) => {
           <ListItem paddingY={2} key={genre.name} >
             <HStack>
               <Image boxSize={8} borderRadius={8} src={getCroppedImages(genre.image_background)} />
-              <Button onClick={() => onSelectgenre(genre)} fontSize={"lg"} variant={"link"} >{genre.name}</Button>
+              <Button fontWeight={(genre.id === selectedGenre?.id ? 'bold' : 'normal')} onClick={() => onSelectgenre(genre)} fontSize={"lg"} variant={"link"} >{genre.name}</Button>
             </HStack>
           </ListItem>
         ))}

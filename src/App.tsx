@@ -28,7 +28,7 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem bg={"black"} area={"aside"} paddingX={2}>
-          <Genres onSelectgenre={(genre) => {
+          <Genres selectedGenre={selectedGenre} onSelectgenre={(genre) => {
             onSelectGenre(genre);
             console.log(genre);
             }}/>
