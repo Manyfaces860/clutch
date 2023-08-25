@@ -45,7 +45,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem bg={"black"} area={"main"}>
-        <Flex>
+        <Flex padding={4} >
           <PlatformList selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => onSetGameQuery({...gameQuery , platform})} />
           <SortSelector appliedSorter={gameQuery.selectedsortorder} onSelectedSortOrder={(selectedsortorder) => onSetGameQuery({...gameQuery , selectedsortorder})} />
         </Flex>
