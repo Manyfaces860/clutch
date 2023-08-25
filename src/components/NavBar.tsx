@@ -3,11 +3,15 @@ import logo from "../assets/Dragonchain-DRGN.svg"
 import ColorModeSwitch from './ColorModeSwitch'
 import SearchInput from './SearchInput'
 
-const NavBar = () => {
+interface Props {
+    onSearchText : (Searchtext: string) => void;
+}
+
+const NavBar = ({ onSearchText } : Props) => {
   return (
         <HStack paddingX={3} >
             <Image src={logo} boxSize={70} ></Image>
-            <SearchInput />
+            <SearchInput onSearchText={onSearchText} />
             <ColorModeSwitch  />
         </HStack>
     )
