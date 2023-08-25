@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs"
 
 interface Props {
     onSelectedSortOrder : (order : string) => void ;
-    appliedSorter : string;
+    appliedSorter : string; // appliedsorter value can be sortingv[0].value
 }
 
 const SortSelector = ({ onSelectedSortOrder, appliedSorter }: Props) => {
